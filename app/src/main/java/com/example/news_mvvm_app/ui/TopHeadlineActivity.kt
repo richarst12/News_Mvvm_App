@@ -1,4 +1,6 @@
 package com.example.news_mvvm_app.ui
 
-class TopHeadlineActivity {
+import androidx.appcompat.app.AppCompatActivity
+
+class TopHeadlineActivity : AppCompatActivity() {
 }
