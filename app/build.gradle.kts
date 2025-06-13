@@ -34,6 +34,9 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -55,6 +58,7 @@ dependencies {
   //  implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.5.1")
 //// Glide
     implementation("com.github.bumptech.glide:glide:4.11.0")
+    implementation("androidx.browser:browser:1.4.0")
 //
 //    // Retrofit + Gson
     implementation("com.squareup.retrofit2:retrofit:2.9.0")

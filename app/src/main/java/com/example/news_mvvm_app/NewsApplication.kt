@@ -6,7 +6,6 @@ import com.example.news_mvvm_app.di.component.DaggerApplicationComponent
 import com.example.news_mvvm_app.di.module.ApplicationModule
 
 class NewsApplication : Application() {
-
     lateinit var applicationComponent: ApplicationComponent
 
     override fun onCreate() {
@@ -15,11 +14,11 @@ class NewsApplication : Application() {
     }
 
     private fun injectDependencies() {
-     applicationComponent = DaggerApplicationComponent
-         .builder()
-         .applicationModule(ApplicationModule(this))
-         .build()
-      applicationComponent.inject(this)
+        applicationComponent = DaggerApplicationComponent
+            .builder()
+            .applicationModule(ApplicationModule(this))
+            .build()
+        applicationComponent.inject(this)
     }
 
 }

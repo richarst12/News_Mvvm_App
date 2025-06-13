@@ -28,5 +28,6 @@ class ActivityModule(private val activity: TopHeadlineActivity) {
             })[TopHeadlineViewModel::class.java]
     }
     @Provides
-    fun provideTopHeadlineAdapter() = TopHeadlineAdapter()
+    fun provideTopHeadlineAdapter() = TopHeadlineAdapter(ArrayList())
 }
+
