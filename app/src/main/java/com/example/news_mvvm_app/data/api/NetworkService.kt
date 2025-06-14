@@ -8,7 +8,7 @@ import retrofit2.http.Query
 
 interface NetworkService {
 
-    @Headers("X-Api-Key: $API_KEY")
+    @Headers("X-Api-Key: $API_KEY", "User-Agent: user")
     @GET("top-headlines")
     suspend fun getTopHeadlines(@Query("country") country: String): TopHeadlinesResponse
 
