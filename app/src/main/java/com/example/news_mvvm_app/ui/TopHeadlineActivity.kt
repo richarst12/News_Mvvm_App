@@ -6,23 +6,22 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.news_mvvm_app.NewsApplication
 import com.example.news_mvvm_app.data.model.Article
 import com.example.news_mvvm_app.databinding.ActivityTopHeadlineBinding
-import com.example.news_mvvm_app.di.component.DaggerActivityComponent
-import com.example.news_mvvm_app.di.module.ActivityModule
 import com.example.news_mvvm_app.viewmodel.TopHeadlineViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+@AndroidEntryPoint
 class TopHeadlineActivity : AppCompatActivity() {
 
-    @Inject
-    lateinit var topHeadlineViewModel: TopHeadlineViewModel
+   private lateinit var topHeadlineViewModel: TopHeadlineViewModel
 
     @Inject
     lateinit var topHeadlineAdapter: TopHeadlineAdapter
@@ -30,10 +29,10 @@ class TopHeadlineActivity : AppCompatActivity() {
     private lateinit var binding: ActivityTopHeadlineBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        injectDependencies()
         super.onCreate(savedInstanceState)
         binding = ActivityTopHeadlineBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setupViewModel()
         setUpUi()
         setupObserver()
     }
@@ -50,6 +49,9 @@ class TopHeadlineActivity : AppCompatActivity() {
         recyclerView.adapter = topHeadlineAdapter
     }
 
+    fun setupViewModel(){
+        topHeadlineViewModel = ViewModelProvider(this)[TopHeadlineViewModel::class.java]
+    }
 
     private fun setupObserver() {
         lifecycleScope.launch {
@@ -84,9 +86,4 @@ class TopHeadlineActivity : AppCompatActivity() {
         topHeadlineAdapter.notifyDataSetChanged()
     }
 
-    private fun injectDependencies() {
-        DaggerActivityComponent.builder()
-            .applicationComponent((application as NewsApplication).applicationComponent)
-            .activityModule(ActivityModule(this)).build().inject(this)
-    }
 }
