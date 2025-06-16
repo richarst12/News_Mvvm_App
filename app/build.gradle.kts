@@ -1,7 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
-    id("org.jetbrains.kotlin.kapt") // for dagger annotation processing
+    id("org.jetbrains.kotlin.kapt")
+    alias(libs.plugins.hilt.android)
 }
 
 android {
@@ -49,18 +50,17 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     //dagger
-    implementation(libs.dagger)
-    kapt(libs.dagger.compiler)
+//    implementation(libs.dagger)
+//    kapt(libs.dagger.compiler)
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
+
     // Lifecycle components
-//    implementation("android.arch.lifecycle:extensions:1.1.1") // For ViewModelProviders, etc. (legacy)
      implementation(libs.androidx.lifecycle.viewmodel.ktx)
-    //  implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1")
-  //  implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.5.1")
-//// Glide
-    implementation("com.github.bumptech.glide:glide:4.11.0")
-    implementation("androidx.browser:browser:1.4.0")
-//
+// Glide
+    implementation(libs.glide)
+    implementation(libs.androidx.browser)
 //    // Retrofit + Gson
-    implementation("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
 }
