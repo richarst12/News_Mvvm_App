@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     id("org.jetbrains.kotlin.kapt")
     alias(libs.plugins.hilt.android)
+    id("org.jetbrains.kotlin.plugin.compose")
 }
 
 android {
@@ -35,8 +36,13 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+    composeOptions {
+       kotlinCompilerExtensionVersion = "1.4.3"
+    }
+
     buildFeatures {
-        viewBinding = true
+       // viewBinding = true
+        compose = true
     }
 }
 
@@ -57,10 +63,21 @@ dependencies {
 
     // Lifecycle components
      implementation(libs.androidx.lifecycle.viewmodel.ktx)
-// Glide
+    // Glide
     implementation(libs.glide)
     implementation(libs.androidx.browser)
-//    // Retrofit + Gson
+    // Retrofit + Gson
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
+
+    // compose
+    implementation(libs.activity.compose)
+    implementation(platform(libs.compose.bom))
+    implementation(libs.compose.ui)
+    implementation(libs.compose.ui.graphics)
+    implementation(libs.compose.ui.tooling.preview)
+    implementation(libs.material3)
+    implementation(libs.coil.compose)
+    implementation(libs.androidx.navigation.compose)
+    implementation(libs.androidx.hilt.navigation.compose)
 }
