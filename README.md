@@ -20,6 +20,9 @@ Additional Features:
 ---
 
 ### 🧱 Project Structure
+
+```
+
 news-mvvm-app/
 │
 ├── data/                     # Data Layer
@@ -46,7 +49,7 @@ news-mvvm-app/
 │
 ├── MainActivity.kt           # Hosts NavGraph
 └── NewsApp.kt                # @HiltAndroidApp application class
-
+```
 ---
 
 ### 📡 API Integration
@@ -98,9 +101,10 @@ Let Gradle sync and run the app on an emulator/device.
 ---
 
 ### About Me
-Richa Sharma | Android Engineer | Medium Blogger
-🔗 LinkedIn
-📝 Medium
+**Richa Sharma** |
+Android Engineer | Medium Blogger
+🔗 [LinkedIn](https://www.linkedin.com/in/richa-sharma-67b56a114/)
+📝 [Medium](https://medium.com/@sharmaricha7724)
 
 ---
 
