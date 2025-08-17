@@ -78,7 +78,7 @@ Repository layer abstracts API calls for ViewModel consumption
 Clone the Repository
 
 ```bash
-git clone [https://github.com/richarst12/portfolio-app-compose.git](https://github.com/richarst12/News_Mvvm_App.git)
+git clone https://github.com/richarst12/portfolio-app-compose.git
 cd News_Mvvm_App
 ```
 Open in Android Studio
