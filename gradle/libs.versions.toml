@@ -3,6 +3,7 @@ agp = "8.9.1"
 browser = "1.8.0"
 dagger = "2.50"
 glide = "4.11.0"
+hiltNavigationCompose = "1.0.0"
 kotlin = "2.0.21"
 coreKtx = "1.16.0"
 junit = "4.13.2"
@@ -13,12 +14,18 @@ lifecycleViewmodelKtx = "2.9.0"
 material = "1.12.0"
 activity = "1.10.1"
 constraintlayout = "2.2.1"
+navigationCompose = "2.9.0"
 retrofit = "2.9.0"
+activity-compose = "1.7.2"
+compose-bom = "2023.03.00"
+coil-compose = "2.4.0"
 
 [libraries]
 androidx-browser = { module = "androidx.browser:browser", version.ref = "browser" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hiltNavigationCompose" }
 androidx-lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycleViewmodelKtx" }
+androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "navigationCompose" }
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
 dagger = { module = "com.google.dagger:dagger", version.ref = "dagger" }
 dagger-compiler = { module = "com.google.dagger:dagger-compiler", version.ref = "dagger" }
@@ -33,6 +40,13 @@ androidx-constraintlayout = { group = "androidx.constraintlayout", name = "const
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "dagger" }
 hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "dagger" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+activity-compose = { module = "androidx.activity:activity-compose", version.ref = "activity-compose" }
+compose-bom = { module = "androidx.compose:compose-bom", version.ref = "compose-bom" }
+compose-ui = { module = "androidx.compose.ui:ui" }
+compose-ui-graphics = { module = "androidx.compose.ui:ui-graphics" }
+compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview" }
+material3 = { module = "androidx.compose.material3:material3" }
+coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coil-compose" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

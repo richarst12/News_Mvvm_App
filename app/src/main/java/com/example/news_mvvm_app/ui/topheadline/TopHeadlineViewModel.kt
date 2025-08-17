@@ -1,4 +1,4 @@
-package com.example.news_mvvm_app.viewmodel
+package com.example.news_mvvm_app.ui.topheadline
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
